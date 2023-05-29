@@ -1,1 +1,349 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Imports */
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+/* Variables */
+$white: #fff;
+$black: #000;
+$green: #27ae60;
+$green-d: #145a32;
+$green-l: #a9dfbf;
+$red: #c0392b;
+$red-d: #641e16;
+$red-l: #e6b0aa;
+$blue: #2980b9;
+$blue-d: #154360;
+$blue-l: #a9cce3;
+$grey: #95a5a6;
+$grey-d: #4d5656;
+$grey-l: #d5dbdb;
+$yellow: #f1c40f;
+$yellow-d: #7d6608;
+$yellow-l: #f9e79f;
+$fushia: #ec2278;
+$fushia-d: #76113c;
+$fushia-l: #f591bb;
+
+$border-1: ' 1px solid';
+
+
+/* CSS */
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+header {
+    color: $white;
+    text-align: center;
+    // font-size: 4vh;
+    vertical-align: middle;
+    height: 8vh;
+    width: 90vw;
+    padding: 1vh 5vw;
+    position: relative;
+    top: 0;
+    left:0;
+}
+
+header i {
+    display: block;
+    // position: absolute;
+    margin: auto;
+    padding: 0;
+    font-size: 7vh;
+    animation: 20s infinite linear rotate-anim;
+    animation-delay: 5s;
+}
+
+header i:last-of-type {
+    margin: -8vh;
+    animation-name: rotate-anim-inv;
+}
+
+footer {
+    color: $white;
+    height: 5vh;
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+footer i {
+    font-size: 3vh;
+    margin: 1vh 1vw;
+}
+
+main {
+    margin: 0 2vw;
+}
+
+.form > * {
+    margin: 1vh 0.5vw;
+}
+
+label {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+ul {
+    list-style-type: none;
+    margin:1vh 0;
+    padding:0;
+    max-height: 50vh;
+    overflow-y: scroll;
+}
+
+li {
+    border-bottom: $black 1px solid;
+    padding: 0.25vh 0.25vw;
+}
+
+li:first-child {
+    border-radius: 4px 4px 0 0;
+}
+
+li:last-child {
+    border: none;
+    border-radius: 0 0 4px 4px;
+}
+
+.bg {
+    &-green{
+        @extend .bg;
+        background: $green;
+    }
+    &-blue{
+        @extend .bg;
+        background: $blue;
+    }
+    &-yellow{
+        @extend .bg;
+        background: $yellow;
+    }
+    &-red{
+        @extend .bg;
+        background: $red;
+    }
+    &-fushia{
+        @extend .bg;
+        background: $fushia;
+    }
+    &-grey{
+        @extend .bg;
+        background: $grey;
+    }
+    &-black{
+        @extend .bg;
+        background: $black;
+    }
+    &-white{
+        @extend .bg;
+        background: $white;
+    }
+}
+
+.txt {
+    &-green{
+        @extend .txt;
+        color: $green-d;
+    }
+    &-blue{
+        @extend .txt;
+        color: $blue-d;
+    }
+    &-yellow{
+        @extend .txt;
+        color: $yellow-d;
+    }
+    &-red{
+        @extend .txt;
+        color: $red-d;
+    }
+    &-fushia{
+        @extend .txt;
+        color: $fushia-d
+    }
+    &-grey{
+        @extend .txt;
+        color: $grey-d;
+    }
+}
+
+.list {
+    color: $white;
+
+    &-green{
+        @extend .list;
+        background: $green;
+        border-bottom: $green-d $border-1;
+    }
+    &-green:nth-child(even){
+        @extend .list;
+        background: $green-l;
+        color: $green-d;
+    }
+    &-blue{
+        @extend .list;
+        background: $blue;
+        border-bottom: $blue-d $border-1;
+    }
+    &-blue:nth-child(even){
+        @extend .list;
+        background: $blue-l;
+        color: $blue-d;
+    }
+    &-yellow{
+        @extend .list;
+        background: $yellow;
+        color: $yellow-d;
+        border-bottom: $yellow-d $border-1;
+    }
+    &-yellow:nth-child(even){
+        @extend .list;
+        background: $yellow-l;
+        color: $yellow-d;
+    }
+    &-red{
+        @extend .list;
+        background: $red;
+        border-bottom: $red-d $border-1;
+    }
+    &-red:nth-child(even){
+        @extend .list;
+        background: $red-l;
+        color: $red-d;
+    }
+    &-fushia{
+        @extend .list;
+        background: $fushia;
+        border-bottom: $fushia-d $border-1;
+    }
+    &-fushia:nth-child(even){
+        @extend .list;
+        background: $fushia-l;
+        color: $fushia-d;
+    }
+    &-grey{
+        @extend .list;
+        background: $grey;
+        border-bottom: $grey-d $border-1;
+    }
+    &-grey:nth-child(even){
+        @extend .list;
+        background: $grey-l;
+        color: $grey-d;
+    }
+}
+
+.form {
+    border-radius: 4px;
+    // padding: 1vh 1vw;
+
+    &-blue{
+        @extend .form;
+        background: $blue-l;
+        border: $blue-d $border-1;
+    }
+    &-green{
+        @extend .form;
+        background: $green-l;
+        border: $green-d $border-1;
+    }
+    &-yellow{
+        @extend .form;
+        background: $yellow-l;
+        border: $yellow-d $border-1;
+    }
+    &-red{
+        @extend .form;
+        background: $red-l;
+        border: $red-d $border-1;
+    }
+    &-fushia{
+        @extend .form;
+        background: $fushia-l;
+        border: $fushia-d $border-1;
+    }
+    &-grey{
+        @extend .form;
+        background: $grey-l;
+        border: $grey-d $border-1;
+    }
+}
+
+.btn {
+    padding: 0.5vh 1vw;
+    margin: 0.25vh 0.25vw;
+    font-weight: bold;
+    border: none;
+
+    &-blue {
+        @extend .btn;
+        background: $blue-d;
+        color: $blue-l;
+        border-radius: 8px;
+    }
+    &-green {
+        @extend .btn;
+        background: $green-d;
+        color: $green-l;
+        border-radius: 8px;
+    }
+    &-red {
+        @extend .btn;
+        background: $red-d;
+        color: $red-l;
+        border-radius: 8px;
+    }
+    &-yellow {
+        @extend .btn;
+        background: $yellow-d;
+        color: $yellow-l;
+        border-radius: 8px;
+    }
+    &-fushia {
+        @extend .btn;
+        background: $fushia-d;
+        color: $fushia-l;
+        border-radius: 8px;
+    }
+    &-grey {
+        @extend .btn;
+        background: $grey-d;
+        color: $grey-l;
+        border-radius: 8px;
+    }
+}
+
+/* Animation */
+@keyframes rotate-anim {
+    from {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate-anim-inv {
+    from {
+        transform: rotate(360deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}

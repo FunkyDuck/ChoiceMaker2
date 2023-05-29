@@ -1,0 +1,30 @@
+<h1>
+    Create List&nbsp;
+    <button [ngClass]="'btn-'+color"  (click)="addList()" *ngIf="!newList"><i class="bi bi-folder-plus"></i> New List</button>
+</h1>
+
+<form [ngClass]="'form-'+color" *ngIf="newList">
+    <label for="newList">List name</label>
+    <input type="text" name="newList" />
+    <button [ngClass]="'btn-'+color"  type="button" (click)="createList()">Create new list</button>
+</form>
+
+<form [ngClass]="'form-'+color" *ngIf="newItem">
+    <label for="newItem">Item name</label>
+    <input type="text" name="newItem">
+    <button [ngClass]="'btn-'+color"  type="button" (click)="createItem()">Add Item</button>
+</form>
+
+<section *ngIf="!displayList">
+    <ul>
+        <li [ngClass]="'list-'+color" *ngFor="let rl of registeredLists" (click)="showList(rl)">{{rl.name}}</li>
+    </ul>
+</section>
+
+<section *ngIf="displayList">
+    <h2>{{displayList.name}} <button [ngClass]="'btn-'+color"  type="button" (click)="addItem()">Add Item</button> <button [ngClass]="'btn-'+color"  type="button" (click)="delList(displayList)">Delete List</button> <button [ngClass]="'btn-'+color"  type="button" (click)="showAll()">Go Back</button></h2>
+    <ul>
+        <li [ngClass]="'list-'+color" *ngFor="let l of displayList.values">{{l}}</li>
+    </ul>
+    <button [ngClass]="'btn-'+color"  type="button" (click)="showAll()">Go Back</button>
+</section>

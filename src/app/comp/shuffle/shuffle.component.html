@@ -1,0 +1,14 @@
+<h1>Random my choice</h1>
+
+<select (change)="setList($event)">
+    <option *ngFor="let rl of registeredLists">{{rl.name}}</option>
+</select>
+
+<section>
+    <h2>{{selectedList.name}}</h2>
+    <h3 *ngIf="choice">I choose for you : {{choice}}</h3>
+    <ul *ngIf="!showList">
+        <li [ngClass]="'list-'+color" *ngFor="let sl of selectedList.values">{{sl}}</li>
+    </ul>
+    <button [ngClass]="'btn-'+color"  type="button" (click)="makeChoice()">Make choice for me</button>
+</section>
